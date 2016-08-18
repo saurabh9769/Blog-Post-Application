@@ -1,0 +1,11 @@
+<div id = "comment-show">
+	<% @blog.comments.each do |i| %>
+ 		<h4> <%= "Author Name:  #{i.author_name} \n " %></h4>
+		<p> <%= "\n Body: #{i.body}" %> </p>
+		<% if i.user_id == current_user.id %>
+			<%= link_to "Edit Comment" , edit_blog_comment_path(@blog, i.id) , remote: true %> |
+			<%= link_to "Delete Comment" , blog_comment_path(@blog, i.id) , data: {confirm: "You want to delete the comment"} , method: :delete , remote: true %><br> <br>
+		<% end %>
+		<hr>
+	<% end %>
+ </div>

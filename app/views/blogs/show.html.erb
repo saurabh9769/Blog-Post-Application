@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+	<div class="container-fluid">
+		<!-- <div class="row"> -->
+		<div class="form-group row">
+		  <div class="col-sm-3">
+				<h3><strong><%= "#{@blog.title}" %></strong></h3>
+				<div class="container">
+					<p><%= @blog.body %></p>
+				</div>
+			</div>
+		</div>
+		<!-- </div> -->
+		<hr>
+		<div class="form-group row">
+	    <div class="col-sm-3">
+				<h3><strong>Comments </strong></h3>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<div class="row">
+	      <div class="col-md-12">
+					<%= render partial: 'blogs/comment'%>
+					<%= link_to "Add Comment" , new_blog_comment_path(@blog, @comment) , remote: true %><br>
+					<div id = "com"></div>
+					<div id= "comment"></div>
+					<div id= "comment-edit"></div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<%= link_to "<< Back to Blogs List", blogs_path %> |
+		<%= link_to "Delete", blog_path(@blog) , method: :delete , data: {confirm: "You want to delete the blog"} %> |
+		<%= link_to "Edit", edit_blog_path(@blog) %>
+		<br>
+		<br>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Blogger</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<p><%= flash.notice %></p>
+		<div class="container">
+			<%= yield %>
+		</div>
+		<div class="panel-footer">
+		  <h5>
+		    <% if signed_in? %>
+		      <%= "Logged in as #{current_user.email}" %>
+		    <% else %>
+		      Logged out
+		    <% end %>
+			</h5>
+		</div>
+	</body>
+</html>
