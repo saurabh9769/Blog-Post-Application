@@ -151,9 +151,8 @@
       </div>
       <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden;">
         <% @banner.each do |i| %>
-            <% binding.pry %>
           <div data-p="112.50" style="display: none;">
-            <%= image_tag i.logo.url %>
+            <%= image_tag "#{i.logo.url}" %>
           </div>
         <% end %>
         <!-- <a data-u="add" href="http://www.jssor.com/demos/banner-slider.slider" style="display:none">Banner Slider</a> -->
