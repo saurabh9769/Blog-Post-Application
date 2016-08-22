@@ -34,6 +34,8 @@ gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 
 gem 'rails_admin'
 
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
