@@ -7,18 +7,22 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-		<p><%= flash.notice %></p>
-		<div class="container">
-			<%= yield %>
-		</div>
-		<div class="panel-footer">
-		  <h5>
+		<div class="page-header" style="margin-left: 45px;">
+			Blog Post Application
+		  <h5 style="float: right; margin-right: 70px;">
 		    <% if signed_in? %>
 		      <%= "Logged in as #{current_user.email}" %>
 		    <% else %>
 		      Logged out
 		    <% end %>
 			</h5>
+		</div>
+		<p><%= flash.notice %></p>
+		<div class="container">
+			<%= yield %>
+		</div>
+		<div class="panel-footer" style="text-align: center">
+			Copyright
 		</div>
 	</body>
 </html>

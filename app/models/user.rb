@@ -6,5 +6,20 @@ class User < ActiveRecord::Base
 
   has_many :blogs
   has_many :comments
+  has_many :banners
+
+  ROLES = %w[admin user].freeze
+
+ #  def has_role?(admin)
+ #  	roles.include?(admin)
+	# end
+
+	# def admin?
+ #  	self.role.name == "Admin"
+	# end
+
+	# def author?
+ #  	self.role.name == "Seller"
+	# end
 
 end
